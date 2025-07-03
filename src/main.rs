@@ -9,7 +9,7 @@ fn main() {
     const PAGES: [Page; 4] = [
         Page {
             folder_name: "home",
-            target_file_name: "index",
+            target_file_name: "home",
         },
         Page {
             folder_name: "games",
@@ -34,7 +34,7 @@ fn main() {
     }
 
     for page in PAGES.iter() {
-        let filename = format!("{}/index.html", page.folder_name);
+        let filename = format!("pages/{}.html", page.folder_name);
         let file = std::fs::File::open(&filename);
         match file {
             Ok(mut f) => {
@@ -42,7 +42,7 @@ fn main() {
                 if let Err(e) = f.read_to_string(&mut contents) {
                     eprintln!("Failed to read {}: {}", filename, e);
                 } else {
-                    let new_filename = format!("docs/{}.html", page.target_file_name);
+                    let new_filename = format!("docs/{}/index.html", page.target_file_name);
                     if let Err(e) = std::fs::write(
                         &new_filename,
                         base_contents
