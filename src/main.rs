@@ -9,7 +9,7 @@ fn main() {
     const PAGES: [Page; 4] = [
         Page {
             folder_name: "home",
-            target_file_name: "home",
+            target_file_name: ".",
         },
         Page {
             folder_name: "games",
