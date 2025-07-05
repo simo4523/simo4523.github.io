@@ -6,7 +6,7 @@ fn main() {
         target_file_name: &'static str,
     }
 
-    const PAGES: [Page; 4] = [
+    const PAGES: [Page; 5] = [
         Page {
             folder_name: "home",
             target_file_name: ".",
@@ -22,6 +22,10 @@ fn main() {
         Page {
             folder_name: "fl-studio",
             target_file_name: "fl-studio",
+        },
+        Page {
+            folder_name: "shaders",
+            target_file_name: "shaders",
         },
     ];
 
